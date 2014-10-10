@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Social Media - BT48 feature.
+ */
+
+include_once 'social_media_bt48.features.inc';

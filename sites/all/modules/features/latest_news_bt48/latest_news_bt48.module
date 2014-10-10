@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Latest News - BT48 feature.
+ */
+
+include_once 'latest_news_bt48.features.inc';

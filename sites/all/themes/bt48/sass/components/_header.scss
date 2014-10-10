@@ -1,0 +1,257 @@
+/* Main Div fixes for each width */
+#main {
+	padding-top: 1em;
+}
+
+/* Header */
+.header {
+	border-top: 10px solid $gray-dark-3;
+	height: auto;
+ 	width: 100%;
+ 	max-width: 100%;
+ 	@include transition(all, 0.125s, linear);	
+ 	z-index: 300;
+}
+
+.header__logo {
+	display: block;
+	float: none;
+	margin: 1em auto;
+	text-align: center;
+
+	&:hover,
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+.mobile-controls {
+	background: $white;
+	border-top: 1px solid $black;
+	border-bottom: 1px solid $black;
+	clear: both;
+	margin: 0 -10px;
+	padding: 1em 0;
+	overflow: hidden;
+	font-family: $font-secondary;
+	font-weight: bold;
+
+	li {
+		float: left;
+		display: block;
+	}
+
+	span {
+		font-family: $font-secondary;
+	}
+
+	a {
+		color: $black; 
+		text-transform: uppercase;
+		font-size: 1.25rem;
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			color: $red;
+		}
+	}
+
+	a.logo {
+		position: absolute;
+		width: 55px;
+		top: 0;
+		left: -55px;
+	}
+
+	#menu {
+		margin-left: 1em;
+	}
+
+	#search {
+		float: right;
+		margin-right: 1em;
+
+		span {
+			margin-right: 10px;
+			display: none;
+		}
+
+		.icon-search:after {
+		}
+	}
+
+	.icon-menu:before {
+		margin-right: 0.5em;
+	}
+
+	#menu:hover .icon-menu:before,
+	#menu:focus .icon-menu:before,
+	.active .icon-menu:before,
+	#search:hover .icon-search:before,
+	#search:focus .icon-search:before,
+	.active .icon-search:before {
+		color: $red;
+	}
+}
+
+.lt-ie8 .mobile-controls #search span {
+	display: block;
+}
+
+
+#navigation {
+	display: none;
+}
+
+/* Tablet Navigation */
+@media all and (min-width: $bp-small-2) {
+
+}
+
+@media all and (max-width: $bp-large) {
+	/* Stuck Navigation */
+	
+}
+
+
+/* Large Tablet Navigation */
+@media all and (min-width: $bp-large) {
+	#main {
+		padding-top: 0;
+	}
+
+	.header {
+		height: auto;
+		margin-bottom: 0;
+		position: relative;
+	 	transition: none !important;	
+	 	-webkit-transition: none !important;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	.header__region {
+		clear: both;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 0;
+	}
+
+
+
+	#block-search-form,
+	#navigation {
+		display: block;
+		margin: 0;
+		font-family: $font-secondary;
+	}
+
+	.mobile-controls {
+		display: none;
+	}
+
+	#block-search-form {
+		position: absolute;
+		top: 66px;
+		right: 10px;
+		text-align: right;
+		width: 40%; /* Calc to handle responsive and fixed element issue */
+
+		form {
+			width: 100%;
+		}
+
+		input.form-text {
+			width: 220px;
+			height: 32px;
+		}
+
+		h2 {
+			display: none;
+		}
+	}
+
+	#navigation {
+		clear: both;
+		margin: 0;
+		padding: 0;
+		font-family: $font-secondary;
+		font-weight: bold;
+
+		ul.menu {
+			display: table; 
+	    margin: 0; 
+	    padding: 0; 
+	    list-style-type: none;
+	    width: 100%;
+
+		  li {
+		    display: table-cell;
+		    padding: 0;
+		    width: 16.6667%;
+		    text-align: center;
+
+			  a {
+			    display: block;
+			    padding: 0.5em 1em;
+			    text-align: center;
+			    color: $gray-dark;
+					font-size: 1em;
+					text-decoration: none;
+					text-transform: uppercase;
+					border-bottom: 5px solid $gray-light;
+
+					&:hover,
+					&:focus {
+						background: transparent;
+						color: $gray-dark;
+						border-bottom: 5px solid $red;
+					}
+			  }
+			}
+
+			li.is-active-trail a {
+				color: $gray-dark;
+				border-bottom: 5px solid $red;
+			}
+		}
+	}
+
+	#navigation a.menu__link.active,
+	#navigation a.menu__link.is-active-trail.active-trail.active {
+		color: $gray-dark;
+		border-bottom: 5px solid $red;
+	}
+}
+
+/* PaperJam Fixes */
+@media all and (min-width: $bp-large) {
+	.page {
+		padding-left: 1.5em !important;
+		padding-right: 1.5em !important;
+	}
+}
+
+@media all and (min-width: $bp-xl) {
+	.page {
+		border-left: 5px solid $black;
+		border-right: 5px solid $black;
+		box-shadow: none !important;
+		padding-left: 2em !important;
+		padding-right: 2em !important;
+	}
+}
+
+@media all and (min-width: $bp-large-2){
+	.header {
+		height: auto;
+	}
+}
+
+.lt-ie9 .page {
+	padding: 0 !important;
+}

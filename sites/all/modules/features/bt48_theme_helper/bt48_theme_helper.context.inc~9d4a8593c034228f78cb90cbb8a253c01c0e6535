@@ -1,0 +1,185 @@
+<?php
+/**
+ * @file
+ * bt48_theme_helper.context.inc
+ */
+
+/**
+ * Implements hook_context_default_contexts().
+ */
+function bt48_theme_helper_context_default_contexts() {
+  $export = array();
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'footer';
+  $context->description = 'Footer layout';
+  $context->tag = 'Theme';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'bean-social-icons' => array(
+          'module' => 'bean',
+          'delta' => 'social-icons',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+        'system-powered-by' => array(
+          'module' => 'system',
+          'delta' => 'powered-by',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Footer layout');
+  t('Theme');
+  $export['footer'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'homepage';
+  $context->description = 'Homepahe layout';
+  $context->tag = 'Theme';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '<front>' => '<front>',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content_front',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Homepahe layout');
+  t('Theme');
+  $export['homepage'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'main_menu';
+  $context->description = 'Main menu in header';
+  $context->tag = 'Theme';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu_block-2' => array(
+          'module' => 'menu_block',
+          'delta' => '2',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Main menu in header');
+  t('Theme');
+  $export['main_menu'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'slidebar';
+  $context->description = 'Slidebar for theme';
+  $context->tag = 'Theme';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu_block-1' => array(
+          'module' => 'menu_block',
+          'delta' => '1',
+          'region' => 'slidebar_left',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Slidebar for theme');
+  t('Theme');
+  $export['slidebar'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'subnav';
+  $context->description = 'Sub-Nav layout';
+  $context->tag = 'Theme';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu_block-3' => array(
+          'module' => 'menu_block',
+          'delta' => '3',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Sub-Nav layout');
+  t('Theme');
+  $export['subnav'] = $context;
+
+  return $export;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Events - BT48 feature.
+ */
+
+include_once 'events_bt48.features.inc';

@@ -1,0 +1,4 @@
+<?php
+function outdatedbrowser_uninstall() {
+  variable_del('outdatedbrowser_aggregate_js');
+}

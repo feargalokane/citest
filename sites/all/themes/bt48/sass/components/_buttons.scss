@@ -1,0 +1,22 @@
+/* Buttons */
+.btn a,
+input.form-submit {
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: $font-secondary;
+	font-size: 1.125em;
+	font-weight: bold;
+	background: $red;
+	border: 1px solid $red;
+	color: white;
+	padding: 0.5em 1em;
+	@include transition(all, 1s);
+	outline: 0;
+
+	&:hover, &:focus {
+		background: $black;
+		border: 1px solid $black;
+		color: $white !important;
+	  @include transition(all, 0.25s);
+	}
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Slideshow - BT48 feature.
+ */
+
+include_once 'slideshow_bt48.features.inc';

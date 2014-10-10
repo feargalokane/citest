@@ -1,0 +1,238 @@
+/* Blocks */
+.sidebars .block {
+	margin-top: 15px;
+	border: 1px solid $gray-light;
+	background: $white;
+	position: relative;
+
+	h2.block__title{
+		font-size: 1.5em;
+		text-transform: uppercase;
+		padding: $pad-quarter $pad-double $pad-half $pad-quarter;
+		min-width: 100px;
+		text-align: left;
+		border-bottom: 1px solid $black;
+
+		a {
+			color: $red;
+		}
+
+		a:hover,
+		a:focus {
+			background-color: $red;
+			color: $white;
+		}
+	}
+}
+
+.sidebars .block-menu-block {
+	ul.menu {
+		margin: 0.5em 0 $space-half 0.25em;
+		padding: 0;
+		list-style: none;
+		font-family: $font-secondary;
+		text-transform: uppercase;
+
+		li {
+			padding: 0;
+
+			li {
+				border: 0;
+			}
+		}
+
+		li.is-leaf,
+		li.dhtml-folder.expanded,
+		li.dhtml-folder.collapsed {
+			list-style: none !important;
+			list-style-image: none !important;
+		}
+
+		a {
+			display: inline-block;
+			padding: 0 2em 0 28px;
+			margin: 0.25em 0;
+			color: $black;
+
+			span {
+				border-bottom: 2px solid transparent;
+			}
+
+			&:hover,
+			&:focus {
+				background: transparent;
+				color: $black;
+
+				span {
+					border-color: $red;
+				}
+			}
+		}
+
+		li.active-trail > a span,
+		li > a.active span {
+			border-color: $red;
+		}
+
+		li.is-leaf a {
+			background: url('../images/menu-leaf.png') 0 0.35em no-repeat;
+			padding-left: 28px;
+		}
+
+		li.collapsed {
+
+			a {
+				padding-left: 0px;
+			}
+			a.dhtml-menu-icon {
+				background: url('../images/menu-collapsed.png') 0 no-repeat;
+				display: none;
+				padding: 0 12px 0 0;
+			}
+
+			a.dhtml-menu-icon:first-child {
+				display: block;
+			}
+		}
+
+		li.expanded {
+
+			a {
+				padding-left: 0px;
+			}
+
+			a.dhtml-menu-icon {
+				background: url('../images/menu-expanded.png') 0 no-repeat;
+				display: none;
+				padding: 0 12px 0 0;
+			}
+
+			a.dhtml-menu-icon:first-child {
+				display: block;
+			}
+		}
+
+		/* Second Level menu */
+		ul {
+			margin: 0 0 0 26px;
+			font-size: 0.75em;
+
+			li.is-leaf,
+			li.collapsed,
+			li.expanded {
+				padding-left: 0;
+			}
+
+			.collapsed {
+				a.menu__link {
+					background: none;
+					padding-left: 0;
+				}
+
+				a.dhtml-menu-icon {
+					background: url('../images/menu-collapsed.png') 0 no-repeat;
+					display: none;
+					padding: 0 12px 0 0;
+				}
+
+				a.dhtml-menu-icon:first-child {
+					display: block;
+				}
+			}
+
+			.expanded {
+				a.menu__link {
+					background: none;
+					padding-left: 0;
+				}
+
+				a.dhtml-menu-icon {
+					background: url('../images/menu-expanded.png') 0 no-repeat;
+					display: none;
+					padding: 0 12px 0 0;
+				}
+
+				a.dhtml-menu-icon:first-child {
+					display: block;
+				}
+			}
+
+			a.menu__link {
+				background: url('../images/menu-leaf.png') 0 0.6667em no-repeat;
+				padding-left: 30px;
+			}
+
+			li.active-trail > a {
+				color: $red;
+			}
+
+			li.active-trail > a span {
+				border-color: transparent;
+			}
+
+			/* Third Level Menu */
+			ul {
+			margin: 0 0 0 30px;
+			font-size: 0.875em;
+
+				li.is-leaf,
+				li.collapsed,
+				li.expanded {
+					padding-left: 0;
+				}
+
+				.is-leaf {
+					a,
+					a.menu__link {
+						background: url('../images/menu-leaf.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+				}
+
+				.collapsed {
+					a {
+						background: url('../images/menu-collapsed.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+
+					a.menu__link {
+						background: none;
+						padding-left: 0;
+					}
+
+					a.dhtml-menu-icon {
+						background: url('../images/menu-collapsed.png') 0 no-repeat;
+						padding: 0 12px 0 0;
+						display: none;
+					}
+
+					a.dhtml-menu-icon:first-child {
+						display: block;
+					}
+				}
+
+				.expanded {
+					a {
+						background: url('../images/menu-expanded.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+
+					a.menu__link {
+						background: none;
+						padding-left: 0;
+					}
+
+					a.dhtml-menu-icon {
+						background: url('../images/menu-expanded.png') 0 no-repeat;
+						padding: 0 12px 0 0;
+						display: none;
+					}
+
+					a.dhtml-menu-icon:first-child {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

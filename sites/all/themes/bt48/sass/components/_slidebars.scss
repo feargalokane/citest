@@ -1,0 +1,217 @@
+/* Slidebars */
+.navbar-vertical div#slidebarmenu,
+.navbar-vertical div#slidebarsearch {
+	padding-top: 40px;
+}
+
+#slidebarmenu {
+	background-color: $black;
+	border-right: 2px solid $white;
+	font-family: $font-secondary;
+	font-size: 1.5em;
+	text-transform: uppercase;
+
+	ul.menu {
+		li.is-leaf,
+		li.dhtml-folder.expanded,
+		li.dhtml-folder.collapsed {
+			list-style: none !important;
+		}
+	}
+
+	ul.menu {
+		margin: $space-half 0em;
+		padding: 0;
+
+		li {
+			border-bottom: 0;
+			padding: 0 0 0 1em;
+
+			li {
+				border: 0;
+			}
+		}
+
+		a {
+			color: $white;
+			display: inline-block;
+			padding: 0 2em 0 28px;
+			margin: 0.25em 0;
+
+			&:hover,
+			&:focus {
+				background: transparent;
+				color: $red;
+			}
+		}
+
+		li.active-trail > a {
+			color: $red;
+		}
+
+		li.is-leaf a {
+			background: url('../images/slidebar-menu-leaf.png') 0 0.35em no-repeat;
+		}
+
+		li.collapsed {
+
+			a {
+				padding-left: 0;
+			}
+			a.dhtml-menu-icon {
+				background: url('../images/slidebar-menu-collapsed.png') 0 no-repeat;
+				padding: 0 12px 0 0;
+			}
+		}
+
+		li.expanded {
+
+			a {
+				padding-left: 0;
+			}
+
+			a.dhtml-menu-icon {
+				background: url('../images/slidebar-menu-expanded.png') 0 no-repeat;
+				padding: 0 12px 0 0;
+			}
+		}
+
+		/* Second Level menu */
+		ul {
+			margin: 0 0 0 30px;
+			font-size: 0.6667em;
+
+			li.is-leaf,
+			li.collapsed,
+			li.expanded {
+				padding-left: 0;
+			}
+
+			.collapsed {
+				a.menu__link {
+					background: none;
+					padding-left: 0;
+				}
+
+				a.dhtml-menu-icon {
+					background: url('../images/slidebar-menu-collapsed.png') 0 no-repeat;
+					padding: 0 12px 0 0;
+				}
+			}
+
+			.expanded {
+				a.menu__link {
+					background: none;
+					padding-left: 0;
+				}
+
+				a.dhtml-menu-icon {
+					background: url('../images/slidebar-menu-expanded.png') 0 no-repeat;
+					padding: 0 12px 0 0;
+				}
+			}
+
+			a.menu__link {
+				background: url('../images/slidebar-menu-leaf.png') 0 0.6667em no-repeat;
+				padding-left: 30px;
+			}
+
+			/* Third Level Menu */
+			ul {
+			margin: 0 0 0 30px;
+			font-size: 0.875em;
+
+				li.is-leaf,
+				li.collapsed,
+				li.expanded {
+					padding-left: 0;
+				}
+
+				.is-leaf {
+					a,
+					a.menu__link {
+						background: url('../images/slidebar-menu-leaf.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+				}
+
+				.collapsed {
+					a {
+						background: url('../images/slidebar-menu-collapsed.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+
+					a.menu__link {
+						background: none;
+						padding-left: 0;
+					}
+
+					a.dhtml-menu-icon {
+						background: url('../images/slidebar-menu-collapsed.png') 0 no-repeat;
+						padding: 0 12px 0 0;
+					}
+				}
+
+				.expanded {
+					a {
+						background: url('../images/slidebar-menu-expanded.png') 0 0.6667em no-repeat;
+						padding-left: 20px;
+					}
+
+					a.menu__link {
+						background: none;
+						padding-left: 0;
+					}
+
+					a.dhtml-menu-icon {
+						background: url('../images/slidebar-menu-expanded.png') 0 no-repeat;
+						padding: 0 12px 0 0;
+					}
+				}
+			}
+		}
+	}
+
+	.menu a.active {
+		color: $red;
+	}
+}
+
+#slidebarsearch {
+	background-color: $black;
+	border-left: 2px solid $white;
+	font-family: $font-secondary;
+	font-size: 1em;
+	text-transform: uppercase;
+
+	.block {
+		padding: 1em
+	}
+
+	h2 {
+		color: $white;
+		font-family: $font;
+		text-transform: capitalize;
+	}
+
+	input.form-text {
+		width: 100%;
+		line-height: 2em;
+		padding: 0.5em;
+	}
+
+	input.form-submit {
+		float: right;
+		font-weight: normal;
+		margin: 1em 0;
+		width: 100%;
+		max-width: 50%;
+
+		&:hover, &:focus {
+			background: $white;
+			background: rgba($white, 0.75);
+			color: $blue;
+		  @include transition(all, 0.25s);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pages - BT48 feature.
+ */
+
+include_once 'pages_bt48.features.inc';

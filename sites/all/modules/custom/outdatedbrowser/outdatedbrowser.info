@@ -1,0 +1,4 @@
+name = "Outdated Browser"
+description = "Displays a message with directions to get newer browser if users browser is less than IE 10"
+core = 7.x
+package = Outdated Browser

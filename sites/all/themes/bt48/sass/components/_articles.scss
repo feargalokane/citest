@@ -1,0 +1,28 @@
+/* Articles & pages */
+.node-article,
+.node-page {
+	.main-image {
+		margin-bottom: $space;
+	}
+
+	.field-name-body {
+		display: block;
+		clear: both;
+	}
+}
+
+@media all and (min-width: $bp-small-2) {
+	.node-article,
+	.node-page {
+		.main-image {
+			float: right;
+			max-width: 49.5%;
+			margin-left: $space;
+		}
+
+		.field-name-body {
+			display: block;
+			clear: left;
+		}
+	}
+}

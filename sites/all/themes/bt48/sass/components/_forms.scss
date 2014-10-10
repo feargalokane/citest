@@ -1,0 +1,12 @@
+/* Forms */
+
+/* Placeholder text on Search Form */
+#block-search-form {
+	::-webkit-input-placeholder,
+	:-moz-placeholder,
+	::-moz-placeholder,
+	:-ms-input-placeholder {
+		background-image: url('../images/search-placeholder.png') 100% 50% no-repeat;
+		padding-right: 40px;
+	}
+}

@@ -1,0 +1,160 @@
+/* Slideshows */
+.flexslider {
+	margin: 0 0 0 0;
+	border: 0;
+	@include border-radius(0);
+	background: $white;
+	@include box-shadow(inherit);
+
+	.event-details {
+		margin: 0;
+	}
+}
+
+.flex-control-nav {
+	display: none;
+}
+
+.flex-direction-nav {
+	display: none;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 91px;
+	height: 47px;
+
+	a {
+		display: block;
+		height: 47px;
+		width: 35px;
+		opacity: 1;
+	}
+
+	.flex-prev {
+		background: url('../images/arrow-left.png') top left no-repeat;
+		display: block !important;
+		float: left;
+		text-indent: -9999px;
+		width: 35px;
+		height: 45px;
+		left: 0 !important;
+	}
+
+	.flex-next {
+		background: url('../images/arrow-right.png') top left no-repeat;
+		display: block !important;
+		float: right;
+		text-indent: -9999px;
+		text-align: left;
+		width: 33px;
+		height: 46px;
+		right: 0 !important;
+	}
+
+	a:before {
+		display: none;
+	}
+}
+
+@media all and (min-width: $bp-small-2) {
+	.flex-direction-nav {
+		display: block;
+	}
+}
+
+.slides h3 {
+	margin: $space-quarter 0;
+}
+
+.slides li {
+	background: $red;
+	color: $white;
+	overflow: hidden;
+	position: relative;
+
+	img {
+	}
+
+	.file {
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin: 0 0 0.5em;
+		line-height: 1;
+	}
+
+	p {
+		font-size: 1.25em;
+		line-height: 1.25;
+		margin: 0;
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		text-indent: -9999px;
+
+		&:hover,
+		&:focus {
+			background: transparent;
+		}
+	}
+
+	.details {
+		padding: 1em;
+		box-sizing: border-box;
+	}
+
+	.field-name-field-slide-video + .details {
+		display: none;
+	}
+
+	@media all and (min-width: $bp-small) {
+
+	}
+
+	@media all and (min-width: $bp-small-2) {
+		img {
+			float: left;
+			width: 56.25%;
+		}
+
+		.details {
+			float: right;
+			width: 43%;
+		}
+	}
+
+	@media all and (min-width: $bp-small-3) {
+		h2 {
+				
+		}
+
+		p {
+
+		}
+	}
+
+	@media all and (min-width: $bp-med-2) {
+		h2 {
+		}
+
+		p {
+		}
+	}
+
+	@media all and (min-width: $bp-large-1) {
+		h2 {
+		}
+
+		p {
+		}
+	}
+}

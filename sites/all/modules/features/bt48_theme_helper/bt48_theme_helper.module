@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BT48 Theme Helper feature.
+ */
+
+include_once 'bt48_theme_helper.features.inc';

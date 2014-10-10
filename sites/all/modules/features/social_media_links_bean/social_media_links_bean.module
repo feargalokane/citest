@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Social Media Links Bean feature.
+ */
+
+include_once 'social_media_links_bean.features.inc';

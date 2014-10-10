@@ -1,0 +1,60 @@
+<?php
+
+  function outdatedbrowser_init(){
+    $aggregate = variable_get('outdatedbrowser_aggregate_js',0);
+    $module_path = drupal_get_path('module', 'outdatedbrowser');
+    drupal_add_css($module_path.'/css/outdatedbrowser.min.css',array('preprocess' => $aggregate));
+    drupal_add_js($module_path.'/js/outdatedbrowser.min.js', array('scope'=>'footer','preprocess' => $aggregate));
+
+    $my_settings = array(
+      'moduleLangPath' => '/'.$module_path.'/lang/en.html'
+    );
+
+    drupal_add_js(array('mycustomjs' => $my_settings), 'setting');
+    drupal_add_js($module_path.'/js/outdatedbrowser_inc.js', array('scope'=>'footer','preprocess' => $aggregate));
+  }
+
+  function outdatedbrowser_menu() {
+      $items = array();
+    $items['admin/config/outdatedbrowser/settings'] = array(
+      'title' => 'Settings',
+      'description' => 'Outdated Browser Configuration Settings',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('outdatedbrowser_settings'),
+      'access callback' => 'user_access',
+      'access arguments' => array('administer outdated browser settings'),
+      'weight' => -2,
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+    );
+
+    return $items ; 
+  }
+
+  function outdatedbrowser_settings($form_state) {
+    $form = array();
+    $form['variables']['outdatedbrowser_aggregate_js'] = array(
+      '#type' => 'select',
+      '#title' => t('Aggregate JS and CSS associted with Outdated Browser Library'),
+      '#options' => array(
+        'TRUE' => t('Aggregate(when enabled for the site)'),
+        'FALSE' => t('Do Not Aggregate'),
+      ),
+      '#default_value' => variable_get('outdatedbrowser_aggregate_js',0),
+      '#weight' => 2,
+    );    
+    return $form;  
+  }
+
+  function outdatedbrowser_settings_submit($form, $form_state) {
+
+    variable_set('outdatedbrowser_aggregate_js', $form_state['values']['outdatedbrowser_aggregate_js']);
+    drupal_flush_all_caches();
+    outdatedbrowser_init();
+    drupal_set_message(t('Outdated Browser settings have been successfully updated.'));
+    return TRUE;
+  }
+
+  function outdatedbrowser_page_build(&$page)
+  {
+    $page['page_top']['outdatedbrowser'] = array('#markup' => '<div id="outdated"></div>');
+}
