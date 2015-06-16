@@ -704,7 +704,10 @@ ul.links {
 }
 .comment .submitted .comment-permalink {
   font-size: 0.786em;
+<<<<<<< HEAD
   text-transform: lowercase;
+=======
+>>>>>>> 3d09d059d6189eae51264350fe796badc29d1cf3
 }
 .comment .content {
   font-size: 0.929em;
@@ -1326,6 +1329,7 @@ input.form-button-disabled:active,
   color: #717171;
 }
 
+<<<<<<< HEAD
 /* Animated throbber */
 html.js input.form-autocomplete {
   background-position: 100% 4px; /* LTR */
@@ -1334,6 +1338,8 @@ html.js input.throbbing {
   background-position: 100% -16px; /* LTR */
 }
 
+=======
+>>>>>>> 3d09d059d6189eae51264350fe796badc29d1cf3
 /* Comment form */
 .comment-form label {
   float: left; /* LTR */

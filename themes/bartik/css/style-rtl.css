@@ -225,10 +225,17 @@ ul.action-links li a {
 
 /* Animated throbber */
 html.js input.form-autocomplete {
+<<<<<<< HEAD
   background-position: 1% 4px;
 }
 html.js input.throbbing {
   background-position: 1% -16px;
+=======
+  background-position: 1% center;
+}
+html.js input.throbbing {
+  background-position: 1% center;
+>>>>>>> 3d09d059d6189eae51264350fe796badc29d1cf3
 }
 
 /* Comment form */

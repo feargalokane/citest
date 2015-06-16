@@ -709,12 +709,16 @@ select.form-select:focus {
   color: #000;
   border-color: #ace;
 }
+<<<<<<< HEAD
 html.js input.form-autocomplete {
   background-position: 100% 4px;
 }
 html.js input.throbbing {
   background-position: 100% -16px;
 }
+=======
+
+>>>>>>> 3d09d059d6189eae51264350fe796badc29d1cf3
 ul.action-links {
   margin: 1em 0;
   padding: 0 20px 0 20px; /* LTR */
