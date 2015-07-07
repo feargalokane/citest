@@ -1,0 +1,36 @@
+language: php
+php: 5.3
+env:
+  - PNAME='bt48-ci-test'
+  - PSITE='bt48-ci-test'
+  - PUUID='d58c9233-567d-4eff-bd74-bb67d57d7bf2'
+  - PSOURCE='dev'
+  # The authentication details for a Pantheon account with access to the site
+  - PEMAIL='citest@bt48.com'
+  - PPASS='password'
+
+	# The host against which the build will be run
+  - PHOST="https://$TRAVIS_BRANCH-$PNAME.gotpantheon.com"
+install:
+  - composer global require drush/drush:6.2.0
+before_script
+  - drush psite-ecreate $PUUID $PSITE --source=$PSOURCE
+script:
+  - drush @pantheon.$PNAME.$PSITE test-run MySimpleTestClass --strict=0
+after_script:
+  - drush psite-edelete $PUUID $PSITE -y
+ install:
+  # Ensure the build doesn't get hung up on adding unknown hosts.
+  - echo "StrictHostKeyChecking no" > ~/.ssh/config
+
+  # Install drush.
+  - composer global require drush/drush:6.2.0
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # Install terminus.
+  - git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
+  - cd $HOME/.drush/terminus
+  - composer update --no-dev
+  - drush cc drush
+
+  # Install additional test dependencies here (like Casper, Behat, etc).
