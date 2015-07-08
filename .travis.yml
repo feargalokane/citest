@@ -35,17 +35,9 @@ before_script:
   - drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
   - drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
 script:
-  #
-  # This is where you run your tests, be they SimpleTest, Casper, Behat,
-  # or otherwise. Here's a SimpleTest example. I've found that drush
-  # likes to exit with odd codes if you run multiple classes at once.
-  # You may have to run one class at a time.
-
+  # Run real / additional tests here.
+  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
 after_script:
-  # Destroy the Pantheon environment
-  # - drush psite-edelete $PUUID $PSITE -y
-
-  # Delete the git branch we created.
-  # - cd $TRAVIS_BUILD_DIR
-  # - git push pantheon :$PSITE
-
+  - drush psite-edelete $PUUID $PSITE -y
+  - cd $TRAVIS_BUILD_DIR
+  - git push pantheon :$PSITE
