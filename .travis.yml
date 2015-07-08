@@ -114,6 +114,12 @@ before_script:
   # --strict=0 option for Drush 6.x compatibility on Pantheon.
   - drush @pantheon.$PNAME.$PSITE updb -y --strict=0
 
+  - drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
+  - drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
+script:
+  # Run real / additional tests here.
+  - drush @pantheon.$PNAME.$PSITE updb -y --strict=0
+
 script:
   #
   # This is where you run your tests, be they SimpleTest, Casper, Behat,
