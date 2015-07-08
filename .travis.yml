@@ -1,4 +1,4 @@
-language: php
+﻿language: php
 
 #
 # Important to note, this is the version of PHP used to run this build, not the
@@ -136,10 +136,6 @@ after_script:
   - drush psite-edelete $PUUID $PSITE -y
 
   # Delete the git branch we created.
-  - cd $TRAVIS_BUILD_DIR; git push pantheon :$PSITE
+  - cd $TRAVIS_BUILD_DIR
+  - git push pantheon :$PSITE
 
-# Continuous delivery! Handy for advanced QA/UAT workflows.
-after_success:
-  # If this was a master branch build (as opposed to PR), and the build passed:
-  # Go ahead and push the changes up to the dev environment and "deploy."
-  - if [ $TRAVIS_BRANCH = 'master' ] && [ $TRAVIS_PULL_REQUEST = 'false' ] ; then pushd $TRAVIS_BUILD_DIR && git push pantheon $PSITE:master && popd && drush @pantheon.$PNAME.dev updb -y --strict=0 ; fi
