@@ -114,28 +114,18 @@ before_script:
   # --strict=0 option for Drush 6.x compatibility on Pantheon.
   - drush @pantheon.$PNAME.$PSITE updb -y --strict=0
 
-  # Enable additional test dependencies here, like SimpleTest.
-  - drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
-
-  # If you're using SimpleTest, you'll want to disable verbose logging. This
-  # ensures no false build failures from file write errors.
-  - drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
-
 script:
   #
   # This is where you run your tests, be they SimpleTest, Casper, Behat,
   # or otherwise. Here's a SimpleTest example. I've found that drush
   # likes to exit with odd codes if you run multiple classes at once.
   # You may have to run one class at a time.
-  #
-  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
-  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0
 
 after_script:
   # Destroy the Pantheon environment
-  - drush psite-edelete $PUUID $PSITE -y
+  # - drush psite-edelete $PUUID $PSITE -y
 
   # Delete the git branch we created.
-  - cd $TRAVIS_BUILD_DIR
-  - git push pantheon :$PSITE
+  # - cd $TRAVIS_BUILD_DIR
+  # - git push pantheon :$PSITE
 
