@@ -8,7 +8,7 @@
 # Change to use UTF8
 #
 php:
-  - 5.3
+  - 5.5
 
 #
 # Travis/Pantheon integration requires an RSA key that at least has read access
