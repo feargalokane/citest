@@ -3,7 +3,9 @@ language: php
 #
 # Important to note, this is the version of PHP used to run this build, not the
 # one used to run your Drupal installation. Ensure compatibility with the Drush
-# and Terminus versions you're using for this build.
+# and Terminus versions you're using for this build. 
+#
+# Change to use UTF8
 #
 php:
   - 5.3
